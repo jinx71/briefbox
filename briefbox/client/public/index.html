@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0f1d" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fff7ed" media="(prefers-color-scheme: light)" />
+    <meta name="description" content="BriefBox — a cosy reader for Hacker News." />
+    <title>BriefBox — Tech news, cosier</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Inline dark-mode bootstrap: applied before React renders to avoid flash -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('briefbox-theme');
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored || (prefersDark ? 'dark' : 'light');
+          if (theme === 'dark') document.documentElement.classList.add('dark');
+        } catch (e) {
+          /* no-op */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run BriefBox.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
