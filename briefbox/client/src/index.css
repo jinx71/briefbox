@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-orange-50 text-ink-900 antialiased;
+    @apply dark:bg-ink-950 dark:text-ink-100;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+
+  a {
+    @apply text-accent-600 hover:text-accent-700 dark:text-accent-400 dark:hover:text-accent-300;
+  }
+
+  /* Focus rings — visible on keyboard nav for a11y */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent-500 ring-offset-2 ring-offset-orange-50 dark:ring-offset-ink-950;
+  }
+}
+
+@layer components {
+  .container-narrow {
+    @apply mx-auto w-full max-w-3xl px-4 sm:px-6;
+  }
+
+  /* HN comment HTML — only `p`, `i`, `a`, `pre`, `code` are emitted */
+  .hn-content p {
+    @apply mt-3 leading-relaxed;
+  }
+  .hn-content p:first-child {
+    @apply mt-0;
+  }
+  .hn-content a {
+    @apply underline underline-offset-2 break-words;
+  }
+  .hn-content pre {
+    @apply mt-3 overflow-x-auto rounded-lg bg-ink-100 p-3 text-xs dark:bg-ink-800;
+  }
+  .hn-content code {
+    @apply font-mono text-[0.9em];
+  }
+  .hn-content i {
+    @apply italic text-ink-600 dark:text-ink-400;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-ink-300 dark:bg-ink-700;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-ink-400 dark:bg-ink-600;
+}
