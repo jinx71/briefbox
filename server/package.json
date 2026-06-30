@@ -5,7 +5,7 @@
   "description": "BriefBox backend — Express proxy around the Hacker News API with node-cache TTL caching, optional JWT auth, and a save-for-later store.",
   "main": "src/server.js",
   "engines": {
-    "node": ">=16 <17"
+    "node": ">22"
   },
   "scripts": {
     "start": "node src/server.js",
